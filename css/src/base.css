@@ -1,0 +1,35 @@
+/*@import url("./common.css");
+
+@import url("views/App.css");
+@import url("views/SetupScreen.css");
+@import url("views/AnalyticsScreen.css");
+@import url("views/analyze.css");
+@import url("views/TextEditor.css");
+
+@import url("views/content-grid/ContentGrid.css");
+
+@import url("views/login/LoginScreen.css");
+
+@import url("views/top-navbar/navbar.css");
+*/
+body, html {
+
+    background: #141414;
+    color: #fff;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+    font-size: 12px;
+    line-height: 1.2;
+
+    margin: 0;
+    display: block;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    cursor: default;
+}

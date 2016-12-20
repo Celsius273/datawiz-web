@@ -1,0 +1,13 @@
+.push {
+	margin-bottom: 24px;
+	margin-top: 24px;
+}
+
+.push-small {
+	margin-bottom: 18px;
+	margin-top: 18px;
+}
+
+.padding-inset {
+    box-sizing: border-box;
+}

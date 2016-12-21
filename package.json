@@ -36,7 +36,8 @@
     "redux-thunk": "^2.1.0",
     "uuid": "^3.0.1",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "highcharts": "^5.0.6"
   },
   "author": "Kelvin Jiang",
   "license": "MIT",

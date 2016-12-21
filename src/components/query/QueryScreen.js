@@ -2,7 +2,7 @@ const classnames = require('classnames');
 const React = require('react');
 
 import { connect } from 'react-redux';
-// import { connectToDB } from '../../utils/DBAPIUtils.js';
+import { executeQuery } from '../../utils/DBAPIUtils.js';
 
 /*
 postgres://ntwylesa:dW0v5WoHMfaVplc_NVU5jPVGNjSjkHxR@elmer.db.elephantsql.com:5432/ntwylesa
@@ -18,7 +18,11 @@ let editor;
 
 class QueryScreen extends React.Component {
   static propTypes = {
-
+    primary: React.PropTypes.string.isRequired,
+    secondary: React.PropTypes.string.isRequired,
+    query: React.PropTypes.string.isRequired,
+    queryResult: React.PropTypes.array.isRequired,
+    executeQuery: React.PropTypes.func.isRequired
   }
 
   constructor(props) {
@@ -36,24 +40,53 @@ class QueryScreen extends React.Component {
     editor.container.remove();
   }
 
+  onExecuteQuery = () => {
+    const queryToExecute = editor.getValue();
+    const {primary, secondary} = this.props;
+
+    this.props.executeQuery(primary, secondary, queryToExecute);
+  }
 
   render() {
-    const testText = `select * from
-      students;
-    `;
+
+    console.log(this.props.queryResult);
 
     return (
       <div className="rc-QueryScreen">
-        <div
-          id="query-editor"
-          className="query-editor"
-        >
-          {testText}
+        <div className="editor-wrapper">
+          <div id="query-editor" className="query-editor">
+            {this.props.query}
+          </div>
         </div>
+
+        <button
+          className="btn btn-large"
+          onClick={this.onExecuteQuery}
+        >
+          Execute Query
+        </button>
       </div>
     );
   }
 }
 
 
-export default QueryScreen;
+const mapStateToProps = (state) => {
+  const {user, query} = state; // equivalent to const context = state.context
+  return {
+    primary: user.primary,
+    secondary: user.secondary,
+    query: query.queryString,
+    queryResult: query.queryResult
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    executeQuery: (primary, secondary, query) => {
+      executeQuery(dispatch, primary, secondary, query);
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(QueryScreen);

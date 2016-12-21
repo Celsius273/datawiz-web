@@ -3,13 +3,13 @@
 // and the query response from the API
 
 const initialState = {
-  query: '',
+  queryString: '',
   queryResult: []
 };
 
 const storeUserQuery = (state, action) => {
   return Object.assign({}, state, {
-    query: action.query
+    queryString: action.query
   });
 }
 

@@ -31,7 +31,7 @@ class App extends React.Component {
 
       case AppState.QUERY_EXEC:
         return (
-          <QueryScreen />
+          <QueryScreen/>
         );
 
       default:
@@ -52,8 +52,9 @@ class App extends React.Component {
 }
 
 // maps states from the reducers to the component
+// questionable decision to do all of this in the top level component
 const mapStateToProps = (state) => {
-  const {user, context} = state; // equivalent to const context = state.context
+  const {user, context, query} = state; // equivalent to const context = state.context
   return {
     appState: context.appState
   };

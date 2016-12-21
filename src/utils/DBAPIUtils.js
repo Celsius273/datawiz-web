@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { connectToDBSuccess } from '../actions/connectActions';
+import { executeQuerySuccess } from '../actions/queryActions';
 
 // import { fetchUser } from '../utils/settingsAPIUtils';
 
@@ -37,14 +38,6 @@ export const executeQuery = (dispatch, primary, secondary, query) => {
     query
   }).then((response) => {
     console.log('Executed query', response);
-    // const {token, nickName, resultLimit} = response.data;
-    // axios.defaults.headers.common['x-access-token'] = token;
-
-    // fetchUser(dispatch);
-    // dispatch(fetchTokenSuccess({email, nickName, token, resultLimit}));
-
-    // dispatch 
-
-    // post another
+    dispatch(executeQuerySuccess(response.data));
   });
 };

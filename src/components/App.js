@@ -30,7 +30,7 @@ class App extends React.Component {
           <DBConnectScreen />
         );
 
-      // case AppState.CONNECTED:
+      // case AppState.QUERY_EXEC:
       //   return (
       //     <AnalyticsScreen />
       //   );

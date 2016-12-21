@@ -3,18 +3,23 @@
 const classnames = require('classnames');
 const React = require('react');
 
+import { connect } from 'react-redux';
+import { connectToDB } from '../../utils/DBAPIUtils.js';
 
 class DBConnectScreen extends React.Component {
   static propTypes = {
-    // TODO: something here that makes an API call
+    connectToDB: React.PropTypes.func.isRequired
   }
 
   constructor(props) {
     super(props);
   }
 
-  connectToDB = () => {
+  onConnect = () => {
     console.log('connecting to DB');
+    const {dbUrl, dbPort, dbUsername, dbPW} = this.refs;
+
+    this.props.connectToDB(dbUrl.value + dbPort.value, dbUsername.value, dbPW.value);
   }
 
 // account id, secondary account id
@@ -28,7 +33,7 @@ class DBConnectScreen extends React.Component {
       <div className="rc-DBConnectForm">
           <div className="form-group push-tiny--top flush--bottom">
             <input
-              ref="db-url"
+              ref="dbUrl"
               className="text-input padding-inset"
               placeholder="URL (host) of database" 
             />
@@ -36,7 +41,7 @@ class DBConnectScreen extends React.Component {
 
           <div className="form-group">
             <input
-              ref="db-port"
+              ref="dbPort"
               className="text-input padding-inset"
               placeholder="Database port"
             />
@@ -44,7 +49,7 @@ class DBConnectScreen extends React.Component {
 
           <div className="form-group">
             <input
-              ref="db-username"
+              ref="dbUsername"
               className="text-input padding-inset"
               placeholder="Username"
             />
@@ -53,7 +58,7 @@ class DBConnectScreen extends React.Component {
           <div className="form-group push--bottom">
             <input
               type="password"
-              ref="db-pw"
+              ref="dbPW"
               className="text-input padding-inset"
               placeholder="Password"
             />
@@ -62,7 +67,7 @@ class DBConnectScreen extends React.Component {
           <button
             id="login-submit-btn"
             className="btn btn-large btn-full"
-            onClick={this.connectToDB}
+            onClick={this.onConnect}
           >
             Connect
           </button>
@@ -90,4 +95,13 @@ class DBConnectScreen extends React.Component {
   }
 }
 
-export default DBConnectScreen;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    connectToDB: (username, password, nickname) => {
+      connectToDB(dispatch, username, password, nickname);
+    }
+  };
+};
+
+export default connect(false, mapDispatchToProps)(DBConnectScreen);

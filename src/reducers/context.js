@@ -6,15 +6,13 @@ import AppState from '../constants/AppState';
 */
 
 const initialState = {
-  currentEmotion: '',
-  intendedEmotion: '',
   appState: AppState.LOGIN
 };
 
 const connectToDBSuccess = (state) => {
   // in the future we can configure the default starting screen of the user when they log in
   return Object.assign({}, state, {
-    appState: AppState.CONNECTED
+    appState: AppState.QUERY_EXEC
   });
 }
 

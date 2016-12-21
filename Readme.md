@@ -8,7 +8,7 @@ Motus is a web app written in React.js that gives you carefully curated content 
 
 ### How to set up?
 
-Simply clone the repo, run 'npm install' to install all the requisite node modules
+Simply clone the repo, run 'npm install' to install all the requisite node modules (upon first clone)
 
 run 'npm run watch' to update the bin/app.bundle.js file with the latest changes,
 then run 'npm start' in another terminal window to set up the localhost port.

@@ -5,7 +5,7 @@
 
 const AppState = {
   LOGIN: 'LOGIN',                   // mostly done (just intended mood needed)
-  CONNECTED: 'CONNECTED'            // 30% done (default view in app for a user)
+  QUERY_EXEC: 'QUERY_EXEC'            // 30% done (default view in app for a user)
 };
 
 export default AppState;

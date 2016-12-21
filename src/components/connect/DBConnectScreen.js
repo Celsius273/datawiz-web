@@ -78,17 +78,15 @@ class DBConnectScreen extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="rc-DBConnectScreen">
-          <h1>Datawiz</h1>
+      <div className="rc-DBConnectScreen">
+        <h1>Datawiz</h1>
 
-          <div className="login-container">
-            <h4 className="push">Connect to a Databse</h4>
+        <div className="login-container">
+          <h4 className="push">Connect to a Databse</h4>
 
-            {this.renderConnectionForm()}
+          {this.renderConnectionForm()}
 
-            <hr className="push--top push-small--bottom push-gutter--sides" id="signup-separator"/>
-          </div>
+          <hr className="push--top push-small--bottom push-gutter--sides" id="signup-separator"/>
         </div>
       </div>
     );

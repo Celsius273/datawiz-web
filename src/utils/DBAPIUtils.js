@@ -17,12 +17,9 @@ export const connectToDB = (dispatch, dbURI, primary, secondary) => {
     secondaryID: secondary,
     type: 'postgres'
   }).then((response) => {
-    console.log(response);
-
     // populate the user store with the primary and secondary ids
     // and the current db URI that we're using
     dispatch( connectToDBSuccess(primary, secondary, dbURI) );
-    // dispatch 
 
     // test exec query
     // executeQuery(dispatch, primary, secondary, 'select * from student');

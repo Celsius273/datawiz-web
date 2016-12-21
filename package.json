@@ -9,6 +9,7 @@
     "watch": "node ./node_modules/webpack/bin/webpack.js --progress --devtool --watch"
   },
   "dependencies": {
+    "ace-builds": "^1.2.5",
     "axios": "^0.15.1",
     "babel": "^6.5.2",
     "babel-cli": "^6.16.0",

@@ -5,12 +5,10 @@
 import { combineReducers } from 'redux';
 import user from './user';
 import context from './context';
-// import content from './content';
-// import analyze from './analyze';
+import query from './query';
 
 const index = combineReducers({
-  // user, context, content, analyze
-  user, context
+  user, context, query
 });
 
 export default index;

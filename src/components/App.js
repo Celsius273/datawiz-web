@@ -12,8 +12,7 @@ import AppState from '../constants/AppState';
 
 // import SetupScreen from '../components/SetupScreen';
 import DBConnectScreen from '../components/connect/DBConnectScreen';
-// import ContentScreen from '../components/content-grid/ContentScreen';
-// import AnalyzeText from '../components/AnalyzeText';
+import QueryScreen from '../components/query/QueryScreen';
 
 class App extends React.Component {
   static propTypes = {
@@ -30,10 +29,10 @@ class App extends React.Component {
           <DBConnectScreen />
         );
 
-      // case AppState.QUERY_EXEC:
-      //   return (
-      //     <AnalyticsScreen />
-      //   );
+      case AppState.QUERY_EXEC:
+        return (
+          <QueryScreen />
+        );
 
       default:
         return (<div>NOT IMPLEMENTED YET</div>);
@@ -54,7 +53,7 @@ class App extends React.Component {
 
 // maps states from the reducers to the component
 const mapStateToProps = (state) => {
-  const {context} = state; // equivalent to const context = state.context
+  const {user, context} = state; // equivalent to const context = state.context
   return {
     appState: context.appState
   };

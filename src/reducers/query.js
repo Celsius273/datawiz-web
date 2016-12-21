@@ -3,33 +3,30 @@
 // and the query response from the API
 
 const initialState = {
-  appState: AppState.LOGIN
+  query: '',
+  queryResult: []
 };
 
-const connectToDBSuccess = (state) => {
-  // in the future we can configure the default starting screen of the user when they log in
+const storeUserQuery = (state, action) => {
   return Object.assign({}, state, {
-    appState: AppState.QUERY_EXEC
+    query: action.query
   });
 }
 
 
-const changeAppState = (state, action) => {
-  console.log('changed state to: ', action.newState);
-  // return state;
-
+const storeQueryResult = (state, action) => {
   return Object.assign({}, state, {
-    appState: action.newState
+    queryResult: action.result
   });
 }
 
 const query = (state = initialState, action) => {
   switch (action.type) {
-    case 'CONNECT_DB_SUCCESS':
-      return connectToDBSuccess(state);
+    case 'EXECUTE_QUERY_BEGIN':
+      return storeUserQuery(state, action);
 
-    case 'CHANGE_APP_STATE':
-      return changeAppState(state, action);
+    case 'EXECUTE_QUERY_COMPLETE':
+      return storeQueryResult(state, action);
 
     default:
       return state;

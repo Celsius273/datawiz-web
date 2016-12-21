@@ -10,7 +10,6 @@ const initialState = {
 };
 
 const connectToDBSuccess = (state) => {
-  // in the future we can configure the default starting screen of the user when they log in
   return Object.assign({}, state, {
     appState: AppState.QUERY_EXEC
   });
@@ -19,7 +18,6 @@ const connectToDBSuccess = (state) => {
 
 const changeAppState = (state, action) => {
   console.log('changed state to: ', action.newState);
-  // return state;
 
   return Object.assign({}, state, {
     appState: action.newState

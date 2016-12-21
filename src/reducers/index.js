@@ -4,13 +4,13 @@
 
 import { combineReducers } from 'redux';
 import user from './user';
-// import context from './context';
+import context from './context';
 // import content from './content';
 // import analyze from './analyze';
 
 const index = combineReducers({
   // user, context, content, analyze
-  user
+  user, context
 });
 
 export default index;

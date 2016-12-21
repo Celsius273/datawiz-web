@@ -17,46 +17,51 @@ class DBConnectScreen extends React.Component {
     console.log('connecting to DB');
   }
 
+// account id, secondary account id
+// 1 randomly generated
+
+// TODO: const uuidV4 = require('uuid/v4');
+// uuidV4();
+
   renderConnectionForm() {
     return (
-      <div className="rc-SignupForm">
+      <div className="rc-DBConnectForm">
           <div className="form-group push-tiny--top flush--bottom">
             <input
               ref="db-url"
               className="text-input padding-inset"
-              placeholder="URL of databse" 
+              placeholder="URL (host) of database" 
             />
           </div>
 
           <div className="form-group">
             <input
+              ref="db-port"
+              className="text-input padding-inset"
+              placeholder="Database port"
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              ref="db-username"
+              className="text-input padding-inset"
+              placeholder="Username"
+            />
+          </div>
+
+          <div className="form-group push--bottom">
+            <input
               type="password"
-              ref="pw1"
+              ref="db-pw"
               className="text-input padding-inset"
               placeholder="Password"
             />
           </div>
-          <div className="form-group push--bottom">
-            <input
-              ref="nickname"
-              className="text-input padding-inset"
-              placeholder="What is your name/nickname?"
-            />
-          </div>
-          <div className="form-group push--bottom">
-            <input
-              type="password"
-              ref="pw"
-              className="text-input padding-inset"
-              placeholder="Password"
-            />
-          </div>
-
-
 
           <button
             id="login-submit-btn"
-            className="btn btn--large btn--full"
+            className="btn btn-large btn-full"
             onClick={this.connectToDB}
           >
             Connect

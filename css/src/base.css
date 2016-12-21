@@ -1,7 +1,9 @@
-/*@import url("./common.css");
+@import url("./common.css");
 
-@import url("views/App.css");
-@import url("views/SetupScreen.css");
+@import url("./App.css");
+@import url("./DBConnectScreen.css");
+
+/*@import url("views/SetupScreen.css");
 @import url("views/AnalyticsScreen.css");
 @import url("views/analyze.css");
 @import url("views/TextEditor.css");
@@ -10,8 +12,8 @@
 
 @import url("views/login/LoginScreen.css");
 
-@import url("views/top-navbar/navbar.css");
-*/
+@import url("views/top-navbar/navbar.css");*/
+
 body, html {
 
     background: #141414;

@@ -1,0 +1,11 @@
+.rc-App {
+
+}
+
+.app-content {
+	margin-top:72px;
+	width: 100%;
+
+  	box-sizing: border-box;
+	padding: 0 40px;
+}

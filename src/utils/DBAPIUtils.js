@@ -22,7 +22,10 @@ export const connectToDB = (dispatch, dbURI, primary, secondary) => {
     // and the current db URI that we're using
     dispatch( connectToDBSuccess(primary, secondary, dbURI) );
 
-    // test exec query
+    // auto execute query that get information schema about one table
+    // 
+
+
     // executeQuery(dispatch, primary, secondary, 'select * from student');
   });
 };

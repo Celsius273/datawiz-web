@@ -4,6 +4,8 @@ const React = require('react');
 import { connect } from 'react-redux';
 import { executeQuery } from '../../utils/DBAPIUtils.js';
 
+import QueryChart from './QueryChart';
+
 /*
 postgres://ntwylesa:dW0v5WoHMfaVplc_NVU5jPVGNjSjkHxR@elmer.db.elephantsql.com:5432/ntwylesa
 
@@ -53,6 +55,10 @@ class QueryScreen extends React.Component {
 
     return (
       <div className="rc-QueryScreen">
+        <QueryChart
+          queryData={this.props.queryResult}
+        />
+
         <div className="editor-wrapper">
           <div id="query-editor" className="query-editor">
             {this.props.query}

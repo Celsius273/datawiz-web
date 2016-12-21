@@ -82,7 +82,7 @@ class DBConnectScreen extends React.Component {
         <h1>Datawiz</h1>
 
         <div className="login-container">
-          <h4 className="push">Connect to a Databse</h4>
+          <h4 className="push">Connect to a Database</h4>
 
           {this.renderConnectionForm()}
 
